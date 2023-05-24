@@ -5,7 +5,8 @@ export const screenSpaceUI = new UICanvas()
 
 const scaleMultiplier = 0.5
 
-export async function openSigningUI(event: string) {
+
+export async function openSigningUI() {
   screenSpaceUI.isPointerBlocker = true
   closeButton.visible = true
   if (await checkWallet()) {
@@ -26,7 +27,7 @@ export async function openSigningUI(event: string) {
   }
 }
 
-export async function openSnapShotUI(event: string) {
+export async function openSnapShotUI() {
   screenSpaceUI.isPointerBlocker = true
   closeButton.visible = true
   SnapShotRedirectUi.visible = true

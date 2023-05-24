@@ -1,6 +1,11 @@
 import { PAVILLION_POSITION, PAVILLION_ROTATION } from '../store'
 
-export class GLTFEntry extends Entity {
+/**
+ * GLTFEntity class that extends the Entity class from the engine.
+ *
+ * @param model - The GLTFShape of the entity.
+ */
+export default class GLTFEntity extends Entity {
   constructor(model: GLTFShape, name: string) {
     super()
     this.addComponent(model)

@@ -11,6 +11,9 @@ export async function setUserData() {
 // external servers being used by the project - Please change these to your own if working on something else!
 export const fireBaseServer = 'https://us-central1-peacemetagallery.cloudfunctions.net/app/'
 
+/**
+ * Check if user has wallet
+ */
 export async function checkWallet(): Promise<boolean> {
   if (!userData) {
     await setUserData()
@@ -23,7 +26,10 @@ export async function checkWallet(): Promise<boolean> {
   }
 }
 
-// get latest scoreboard data from server
+/**
+ * Get guestbook signatures
+ * @deprecated
+ */
 export async function getGuestBook() {
   try {
     const url = fireBaseServer + 'get-signatures'
@@ -36,7 +42,9 @@ export async function getGuestBook() {
   }
 }
 
-// change data in scoreboard
+/**
+ * change data in scoreboard
+ */
 export async function signGuestBook() {
   if (!userData) {
     await setUserData()

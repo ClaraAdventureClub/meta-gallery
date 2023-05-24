@@ -1,8 +1,10 @@
-import { GLTFEntry } from '../entries/GLTFEntry'
 import * as utils from '@dcl/ecs-scene-utils'
+
 import { SceneEntity, SubScene, VisibilityStrategyEnum } from '../utilsSceneMng/subScene'
 import { createPaintingsScenes } from './createPaintings'
 import { SceneManager } from '../utilsSceneMng/sceneManager'
+
+import GLTFEntity from '../entities/GLTFEntity'
 
 // Instantiate a new SceneManager
 const SCENE_MGR = new SceneManager()
@@ -11,10 +13,10 @@ export function createPavilion() {
   //Add the different 3D models to the scene
   const pavilionShapeInt = new GLTFShape('models/pavilion/pavilion_int.glb')
   pavilionShapeInt.isPointerBlocker = false
-  const pavilionInterior = new GLTFEntry(pavilionShapeInt, 'pavilion')
+  const pavilionInterior = new GLTFEntity(pavilionShapeInt, 'pavilion')
   engine.addEntity(pavilionInterior)
 
-  const flags = new GLTFEntry(new GLTFShape('models/pavilion/flags.glb'), 'flags')
+  const flags = new GLTFEntity(new GLTFShape('models/pavilion/flags.glb'), 'flags')
   engine.addEntity(flags)
 
   const chair = new Entity()
@@ -27,7 +29,7 @@ export function createPavilion() {
   )
   engine.addEntity(chair)
 
-  const switchButton = new GLTFEntry(new GLTFShape('models/pavilion/theme_switch.glb'), 'switchButton')
+  const switchButton = new GLTFEntity(new GLTFShape('models/pavilion/theme_switch.glb'), 'switchButton')
   engine.addEntity(switchButton)
 
   // Add an audio clip to the interior pavilion model
@@ -36,7 +38,7 @@ export function createPavilion() {
   pavilionInterior.addComponent(source)
 
   const pavilionShapeExt = new GLTFShape('models/pavilion/pavilion_ext.gltf')
-  const pavilionEntry = new GLTFEntry(pavilionShapeExt, 'pavilion')
+  const pavilionEntry = new GLTFEntity(pavilionShapeExt, 'pavilion')
   const pavilionEntity = new SceneEntity('pav_ext', pavilionEntry)
   engine.addEntity(pavilionEntry)
   pavilionEntity.visibilityStrategy = VisibilityStrategyEnum.ENGINE_ADD_REMOVE

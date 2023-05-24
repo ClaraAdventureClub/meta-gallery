@@ -1,6 +1,14 @@
 import * as utils from '@dcl/ecs-scene-utils'
 import { imageTexture } from '../store'
 
+/**
+ *
+ * @param entity
+ * @param {string} name
+ * @param {string} uiText
+ * @param {Vector3} boxDimension
+ * @param {Vector3} boxPosition
+ */
 export function createDescriptionUI(
   entity: { addComponent: (arg0: utils.TriggerComponent) => void },
   name: string,

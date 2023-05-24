@@ -7,7 +7,6 @@ import { default as fresqueDescription } from '../../static/fresque.json'
  * It adds a 3D entity representing the fresco with UI elements for navigation and text display.
  * Triggers are set up to display the UI when the user's camera is in the right position.
  */
-
 export function createFresqueDescription(): void {
   const fresque = new Entity()
   fresque.addComponent(new BoxShape())
