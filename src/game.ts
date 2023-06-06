@@ -1,10 +1,11 @@
 import { createDoors } from './factories/createDoors'
 import { PAVILLION_POSITION, PAVILLION_ROTATION } from './store'
 import { createFresqueDescription } from './factories/createFresqueDescription'
-import { GuestBook } from './guestBook/guestBook'
 import { createNPCBot } from './factories/createNPCBot'
 import { createFloor } from './factories/createFloor'
 import { createPavilion } from './factories/createPavilion'
+
+import GuestBook from './entities/guestBook/GuestBook'
 
 function main() {
   //Add pavilion 3D model to the main scene and create a subscene for each art theme + a switch button.

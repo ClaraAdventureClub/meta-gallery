@@ -8,6 +8,9 @@ export type SceneInitData = {
   name: string
 }
 
+/**
+ * Module for managing sub-scenes
+ */
 export class SceneManager {
   scenes: SubScene[] = []
 

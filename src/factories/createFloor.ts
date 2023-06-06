@@ -1,6 +1,6 @@
-import { FloorEntry } from '../entries/FloorM'
+import {FloorEntity} from "../entities/FloorEntity";
 
 export function createFloor() {
-  const floorM = new FloorEntry(new GLTFShape('models/Floor/floor.glb'), 'Floor')
-  engine.addEntity(floorM)
+    const floorM = new FloorEntity(new GLTFShape('models/Floor/floor.glb'))
+    engine.addEntity(floorM)
 }

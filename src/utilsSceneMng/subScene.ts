@@ -24,6 +24,11 @@ export type SceneEntityArgs = EntityWrapperArgs & {
 
 export type EntityActionListener = (entityWrap: BaseEntityWrapper) => void
 
+/**
+ * Base class for all entities that are part of a scene
+ * @param name name of the entity
+ * @param args optional arguments
+ */
 export class BaseEntityWrapper {
   name: string
   visible: boolean = true
@@ -143,7 +148,13 @@ export class BaseEntityWrapper {
   }
 }
 
-export class EntityWrapper extends BaseEntityWrapper {
+/**
+ * A scene entity is an entity that is part of a scene
+ * @param name name of the entity
+ * @param entity the entity to be added to the scene
+ * @param args optional arguments
+ */
+export class SceneEntity extends BaseEntityWrapper {
   rootEntity: Entity
   entities: Entity[]
 
@@ -246,15 +257,14 @@ export class EntityWrapper extends BaseEntityWrapper {
   }
 }
 
-export class SceneEntity extends EntityWrapper {
-  constructor(name: string, entity: Entity | Entity[], args?: SceneEntityArgs) {
-    super(name, entity, args)
-  }
-}
-
 export type VisibleChangeType = 'show' | 'hide'
 
-//FIXME do not extend Entity
+/**
+ * A subscene is a scene that is part of a scene
+ * @param name name of the entity
+ * @param entity the entity to be added to the scene
+ * @param args optional arguments
+ */
 export class SubScene extends BaseEntityWrapper {
   public rootEntity?: Entity //if hierarchical
   public initAlready: boolean = false
@@ -309,8 +319,11 @@ export class SubScene extends BaseEntityWrapper {
   }
 }
 
+/**
+ * A subscene group is a group of subscenes
+ */
 export class SubSceneGroup extends SubScene {
-  //public id: number
+
   public scenes: SubScene[] = []
 
   disable() {
