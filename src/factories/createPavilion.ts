@@ -67,8 +67,9 @@ export function createPavilion() {
       onCameraExit: () => {
         // When the camera exits the trigger box (pavilion)
         SCENE_MGR.changeToScene(extPavilionScene) // Switch back to exterior scene
+        source.playing = false
       }
-      //  , enableDebug: true //display the shape in dev scene
+      // , enableDebug: true //display the shape in dev scene
     })
   )
 
@@ -78,6 +79,7 @@ export function createPavilion() {
       (e) => {
         index = (index + 1) % scenes.length
         SCENE_MGR.changeToScene(scenes[index]) // on click update subscene
+        log(scenes[index].name)
       },
       {
         button: ActionButton.POINTER,

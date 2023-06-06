@@ -1,4 +1,4 @@
-import {PAVILLION_POSITION, PAVILLION_ROTATION} from '../store'
+import { PAVILLION_POSITION, PAVILLION_ROTATION } from '../store'
 import * as utils from '@dcl/ecs-scene-utils'
 
 export default class DoorEntity extends Entity {

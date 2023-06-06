@@ -1,4 +1,4 @@
-import { imageTexture, PAVILLION_POSITION} from '../store'
+import { imageTexture, PAVILLION_POSITION } from '../store'
 import * as utils from '@dcl/ecs-scene-utils'
 import { default as fresqueDescription } from '../../static/fresque.json'
 

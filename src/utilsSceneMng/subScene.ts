@@ -323,7 +323,6 @@ export class SubScene extends BaseEntityWrapper {
  * A subscene group is a group of subscenes
  */
 export class SubSceneGroup extends SubScene {
-
   public scenes: SubScene[] = []
 
   disable() {

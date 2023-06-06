@@ -1,10 +1,9 @@
 import { signGuestBook, checkWallet } from './serverHandler'
-import { imageTexture } from '../store'
+import { imageTexture } from '../../store'
 
 export const screenSpaceUI = new UICanvas()
 
 const scaleMultiplier = 0.5
-
 
 export async function openSigningUI() {
   screenSpaceUI.isPointerBlocker = true
@@ -31,7 +30,7 @@ export async function openSnapShotUI() {
   screenSpaceUI.isPointerBlocker = true
   closeButton.visible = true
   SnapShotRedirectUi.visible = true
-  SnapShotButton.visible = true
+  SnapShotButton.visible = false
 }
 
 export function closeUI() {
@@ -46,7 +45,6 @@ export function closeUI() {
   SnapShotButton.visible = false
 }
 
-
 export const SnapShotRedirectUi = new UIImage(screenSpaceUI, imageTexture)
 SnapShotRedirectUi.name = 'SnapShotRedirectUi'
 SnapShotRedirectUi.width = 1024 * scaleMultiplier
@@ -58,7 +56,6 @@ SnapShotRedirectUi.sourceTop = 0
 SnapShotRedirectUi.sourceWidth = 1024
 SnapShotRedirectUi.sourceHeight = 884
 SnapShotRedirectUi.visible = false
-
 
 export const guestPlayerUI = new UIImage(screenSpaceUI, imageTexture)
 guestPlayerUI.name = 'guestPlayerUI'
@@ -160,4 +157,3 @@ exitButton.onClick = new OnClick(() => {
 SnapShotButton.onClick = new OnClick(() => {
   openExternalURL('https://snapshot.org/#/finnishmetagallery.eth')
 })
-

@@ -6,16 +6,15 @@ import { createDescriptionUI } from './createDescriptionUI'
 import GLTFEntity from '../entities/GLTFEntity'
 
 export type Model = {
-  x: number;
-  y: number;
-  z: number;
-  model: string;
-};
-
-export type Models = {
-  [key: string]: Model;
+  x: number
+  y: number
+  z: number
+  model: string
 }
 
+export type Models = {
+  [key: string]: Model
+}
 
 /**
  * Create a sub scene for each theme, derive copy and assets from the copy documents and return an array of all sub scene objects.
@@ -38,7 +37,7 @@ export function createPaintingsScenes(): SubScene[] {
     const sceneEntityList = []
 
     // Create the panel for this SubScene ( text and images presenting the theme)
-    const panel = new GLTFEntity(new GLTFShape(`models/${theme}/${theme}.glb`), 'panel')
+    const panel = new GLTFEntity(new GLTFShape(`models/themes/${theme}/${theme}.glb`), 'panel')
     engine.addEntity(panel)
     const sceneEntityPanel = new SceneEntity('panel', panel)
     sceneEntityPanel.visibilityStrategy = VisibilityStrategyEnum.ENGINE_ADD_REMOVE

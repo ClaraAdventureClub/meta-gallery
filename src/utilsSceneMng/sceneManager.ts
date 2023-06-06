@@ -45,7 +45,7 @@ export class SceneManager {
   }
   changeToScene(scene: SubScene) {
     for (const p in this.scenes) {
-      if (this.scenes[p] == scene) {
+      if (this.scenes[p] === scene) {
       } else {
         this.scenes[p].hide()
         this.scenes[p].disable()

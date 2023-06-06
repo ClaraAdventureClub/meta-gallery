@@ -24,7 +24,7 @@ This folder contains all the necessary files to launch a Decentraland scene.
 ## Try it out
 
 **Install the CLI**
-
+``
 Download and install the Decentraland CLI by running the following command:
 
 ```bash
